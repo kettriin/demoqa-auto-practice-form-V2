@@ -1,0 +1,1 @@
+rootProject.name = "demoqa-auto-practice-form-v2"
