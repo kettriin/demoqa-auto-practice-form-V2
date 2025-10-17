@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
 import pages.components.CalendarComponent;
 
@@ -105,4 +106,10 @@ public class LkForm {
         return this;
     }
 
+    //метод для проверки ошибки ввода
+    public LkForm invalidEmailAddress() {
+        userEmail.shouldHave(Condition.cssValue("border-color", "rgb(220, 53, 69)"));
+
+        return this;
+    }
 }

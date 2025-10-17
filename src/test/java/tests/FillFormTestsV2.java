@@ -61,6 +61,7 @@ public class FillFormTestsV2 {
     @Test
     void minimalDataFormFilling() {
         lkForm.goToPage()
+                .removeAddBannersFromFooter()
                 .nameSurnameFilling("Larry", "The Snail")
                 .genderSetting("Male")
                 .phoneNumberFilling("9004100000");
@@ -79,6 +80,7 @@ public class FillFormTestsV2 {
     @Test
     void invalidEmailAddress() {
         lkForm.goToPage()
+                .removeAddBannersFromFooter()
                 .nameSurnameFilling("Sponge", "Bob")
                 .emailFilling("not a sponge mail-ru") // невалидный формат ввода почты
                 .genderSetting("Male")
@@ -88,6 +90,8 @@ public class FillFormTestsV2 {
 
         // проверяем что модалка с сохраненными данными не появилась
         dataModal.modalNotVisible();
+        // проверяем что поле покраснело из-за ошибки введенных данных
+        lkForm.invalidEmailAddress();
     }
 
 }
