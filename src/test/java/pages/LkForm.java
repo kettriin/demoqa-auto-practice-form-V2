@@ -1,16 +1,14 @@
 package pages;
 
 import com.codeborne.selenide.SelenideElement;
-import com.codeborne.selenide.WebElementCondition;
 import pages.components.CalendarComponent;
 
-import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class LkForm {
 
-    private SelenideElement
+    private final SelenideElement
             firstName = $("#firstName"),
             lastName = $("#lastName"),
             userEmail = $("#userEmail"),
@@ -24,13 +22,11 @@ public class LkForm {
             cityDropDown = $("#city"),
             currentAddress = $("#currentAddress");
 
-    private String fieldErrorClass = "field-error";
-
     //методы заполнения формы
 
     CalendarComponent caalendarComponent = new CalendarComponent();
 
-    public LkForm GoToPage() {
+    public LkForm goToPage() {
         open("/automation-practice-form");
         executeJavaScript("$('footer').remove();");
         executeJavaScript("$('#fixedban').remove();");
@@ -38,7 +34,7 @@ public class LkForm {
         return this;
     }
 
-    public LkForm NameSurnameFilling(String firstNameValue, String secondNameValue) {
+    public LkForm nameSurnameFilling(String firstNameValue, String secondNameValue) {
         $(firstName).setValue(firstNameValue);
         $(lastName).setValue(secondNameValue);
 

@@ -10,7 +10,7 @@ import pages.components.Modals;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
-public class FillFormTestsv2 {
+public class FillFormTestsV2 {
 
     LkForm lkForm = new LkForm();
     Buttons submitButton = new Buttons();
@@ -25,8 +25,8 @@ public class FillFormTestsv2 {
 
     @Test
     void positiveFormFilling() {
-        lkForm.GoToPage()
-                .NameSurnameFilling("Marry", "By")
+        lkForm.goToPage()
+                .nameSurnameFilling("Marry", "By")
                 .emailFilling("mbemail@mail.ru")
                 .genderSetting("Female")
                 .phoneNumberFilling("9384109813")
@@ -59,8 +59,8 @@ public class FillFormTestsv2 {
 
     @Test
     void minimalDataFormFilling() {
-        lkForm.GoToPage()
-                .NameSurnameFilling("Larry", "The Snail")
+        lkForm.goToPage()
+                .nameSurnameFilling("Larry", "The Snail")
                 .genderSetting("Male")
                 .phoneNumberFilling("9004100000");
 
@@ -77,8 +77,8 @@ public class FillFormTestsv2 {
 
     @Test
     void invalidEmailAddress() {
-        lkForm.GoToPage()
-                .NameSurnameFilling("Sponge", "Bob")
+        lkForm.goToPage()
+                .nameSurnameFilling("Sponge", "Bob")
                 .emailFilling("not a sponge mail-ru") // невалидный формат ввода почты
                 .genderSetting("Male")
                 .phoneNumberFilling("1104100000");
