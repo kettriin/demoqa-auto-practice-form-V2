@@ -28,6 +28,11 @@ public class LkForm {
 
     public LkForm goToPage() {
         open("/automation-practice-form");
+
+        return this;
+    }
+
+    public LkForm removeAddBannersFromFooter() {
         executeJavaScript("$('footer').remove();");
         executeJavaScript("$('#fixedban').remove();");
 

@@ -26,6 +26,7 @@ public class FillFormTestsV2 {
     @Test
     void positiveFormFilling() {
         lkForm.goToPage()
+                .removeAddBannersFromFooter()
                 .nameSurnameFilling("Marry", "By")
                 .emailFilling("mbemail@mail.ru")
                 .genderSetting("Female")
