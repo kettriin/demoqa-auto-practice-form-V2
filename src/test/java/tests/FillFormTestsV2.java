@@ -2,6 +2,7 @@ package tests;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import pages.LkForm;
 import pages.components.Buttons;
@@ -10,6 +11,7 @@ import pages.components.Modals;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.*;
 
+@Tag("REGISTRATION")
 public class FillFormTestsV2 {
 
     LkForm lkForm = new LkForm();
