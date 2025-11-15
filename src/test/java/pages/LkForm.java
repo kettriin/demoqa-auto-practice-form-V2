@@ -34,8 +34,8 @@ public class LkForm {
     }
 
     public LkForm removeAddBannersFromFooter() {
-        executeJavaScript("$('footer').remove();");
         executeJavaScript("$('#fixedban').remove();");
+        executeJavaScript("$('footer').remove();");
 
         return this;
     }
