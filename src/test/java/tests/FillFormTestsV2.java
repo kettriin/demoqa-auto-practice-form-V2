@@ -4,7 +4,6 @@ import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeOptions;
 import pages.LkForm;
 import pages.components.Buttons;
 import pages.components.Modals;
@@ -26,14 +25,7 @@ public class FillFormTestsV2 {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
 
-        Configuration.browserCapabilities = new ChromeOptions()
-                .addArguments(
-                        "--no-sandbox",
-                        "--disable-dev-shm-usage",
-                        "--disable-gpu",
-                        "--headless",
-                        "--window-size=1920,1080"
-                );
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
     }
 
     @Test
