@@ -32,6 +32,7 @@ public class FillFormTestsV2 {
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.pageLoadStrategy = "eager";
         Configuration.browser = System.getProperty("browser", "chrome");
+        Configuration.browserVersion = System.getProperty("version", "128.0");
         Configuration.remote = System.getProperty("farm_link");
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
