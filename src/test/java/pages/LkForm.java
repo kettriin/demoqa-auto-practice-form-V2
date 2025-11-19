@@ -19,6 +19,8 @@ public class LkForm {
             subjectsInput = $("#subjectsInput"),
             hobbiesWrapper = $("#hobbiesWrapper"),
             pictureLoader = $("#uploadPicture"),
+            stateInput = $("#react-select-3-input"),
+            cityInput = $("#react-select-4-input"),
             stateDropDown = $("#state"),
             cityDropDown = $("#city"),
             currentAddress = $("#currentAddress");
@@ -34,74 +36,75 @@ public class LkForm {
     }
 
     public LkForm removeAddBannersFromFooter() {
-        executeJavaScript("$('footer').remove();");
-        executeJavaScript("$('#fixedban').remove();");
-
+        sleep(1500);
+        executeJavaScript("document.querySelectorAll('iframe, #fixedban, footer').forEach(el => el.remove());");
         return this;
     }
 
     public LkForm nameSurnameFilling(String firstNameValue, String secondNameValue) {
-        $(firstName).setValue(firstNameValue);
-        $(lastName).setValue(secondNameValue);
+        firstName.setValue(firstNameValue);
+        lastName.setValue(secondNameValue);
 
         return this;
     }
 
     public LkForm emailFilling(String emailAddress) {
-        $(userEmail).setValue(emailAddress);
+        userEmail.setValue(emailAddress);
 
         return this;
     }
 
     public LkForm genderSetting(String genderChoice) {
-        $(genderWrapper).$(byText(genderChoice)).click();
+        genderWrapper.$(byText(genderChoice)).click();
 
         return this;
     }
 
     public LkForm phoneNumberFilling(String phoneNumber) {
-        $(userPhoneNumber).setValue(phoneNumber);
+        userPhoneNumber.setValue(phoneNumber);
 
         return this;
     }
 
     public LkForm birthDateSetting(String day, String month, String year) {
-        $(calendarInput).click();
+        calendarInput.click();
         caalendarComponent.dateSetting(day, month,year);
 
         return this;
     }
 
     public LkForm subjectInput(String subjectName) {
-        $(subjectsInput).setValue(subjectName).pressEnter();
+        subjectsInput.setValue(subjectName).pressEnter();
 
         return this;
     }
 
     public LkForm hobbiesInpit(String hobby) {
-        $(hobbiesWrapper).$(byText(hobby)).click();
+        hobbiesWrapper.$(byText(hobby)).click();
 
         return this;
     }
 
     public LkForm uploadPicture(String pictureName) {
-        $(pictureLoader).uploadFromClasspath(pictureName);
+        pictureLoader.uploadFromClasspath(pictureName);
 
         return this;
     }
 
     public LkForm locationDropdowns(String stateName, String cityName) {
-        $(stateDropDown).click();
-        $(stateDropDown).$(byText(stateName)).click();
+        removeAddBannersFromFooter();
 
-        $(cityDropDown).click();
-        $(cityDropDown).$(byText(cityName)).click();
+        stateDropDown.scrollIntoView(true).click();
+        stateInput.setValue(stateName).pressEnter();
+
+        cityDropDown.scrollIntoView(true).click();
+        cityInput.setValue(cityName).pressEnter();
 
         return this;
     }
 
     public LkForm currentAddressInput(String addressValue) {
-        $(currentAddress).setValue(addressValue);
+        currentAddress.setValue(addressValue);
 
         return this;
     }
