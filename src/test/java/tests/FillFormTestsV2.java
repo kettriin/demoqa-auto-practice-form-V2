@@ -3,10 +3,7 @@ package tests;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
 import helpers.Attach;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Tag;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import pages.LkForm;
 import pages.components.Buttons;
@@ -41,10 +38,12 @@ public class FillFormTestsV2 {
                 "enableVideo", true
         ));
         Configuration.browserCapabilities = capabilities;
-
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
+    @BeforeEach
+    void beforeEachTest() {
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
+    }
     @AfterEach
     void addAttachments() {
         Attach.screenshotAs("Last screenshot");
