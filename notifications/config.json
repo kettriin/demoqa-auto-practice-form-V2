@@ -1,17 +1,17 @@
 {
   "base": {
-    "allureFolder": "allure-report",
-    "comment": "${COMMENT}",
-    "enableChart": true,
-    "environment": "${ENVIRONMENT}",
-    "language": "en",
     "logo": "",
     "project": "${JOB_NAME}",
-    "reportLink": "${BUILD_URL}"
+    "environment": "${ENVIRONMENT}",
+    "reportLink": "${BUILD_URL}",
+    "comment": "${COMMENT}",
+    "language": "en",
+    "allureFolder": "allure-report",
+    "enableChart": true
   },
   "telegram": {
-    "token": "8259864518:AAES5vAxa7C0u5YcOXxu5Au7yaaTNpXk6yk",
-    "chat": "-1003421236899",
+    "token": "6823856309:AAF4nsVawqCaSQ7WvcYhggAeGx8H2BJWGxA",
+    "chat": "-1001953528195",
     "replyTo": ""
   }
 }
